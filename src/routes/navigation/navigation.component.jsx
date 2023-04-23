@@ -10,17 +10,20 @@ export const NavigationComponent = () => {
         <Fragment>
 
             <div className='navigation'>
+
                 <Link className='logo-container' to='/'>
                     <CrwnLogo className='logo' />
                 </Link>
-            </div>
-            <div className='nav-links-container'>
-                <Link className='nav-link' to='/shop'>
-                    Shop
-                </Link>
-                <Link className='nav-link' to='/sign-in'>
-                    Sign-in
-                </Link>
+
+                <div className='nav-links-container'>
+                    <Link className='nav-link' to='/shop'>
+                        Shop
+                    </Link>
+                    <Link className='nav-link' to='/sign-in'>
+                        Sign-in
+                    </Link>
+                </div>
+
             </div>
             <Outlet/>
         </Fragment>
