@@ -1,7 +1,9 @@
+import {signIn} from "../../utils/firebase/firebase-utils";
+
 export const SignInComponent = () => {
     return(
         <div>
-            Sign-in component
+            <button onClick={ signIn }>Sign in</button>
         </div>
     )
 }
