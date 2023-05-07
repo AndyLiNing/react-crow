@@ -1,9 +1,9 @@
 import './navigation.styles.scss';
 
 import { Fragment } from 'react';
-import {Link, Outlet} from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 
-import { ReactComponent as  CrwnLogo } from '../../assets/logo/crown.svg'
+import { ReactComponent as CrwnLogo } from '../../assets/logo/crown.svg'
 
 export const NavigationComponent = () => {
     return(
@@ -20,7 +20,7 @@ export const NavigationComponent = () => {
                         Shop
                     </Link>
                     <Link className='nav-link' to='/sign-in'>
-                        Sign-in
+                        Sign in
                     </Link>
                 </div>
 
