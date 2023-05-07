@@ -1,13 +1,13 @@
 import './sign-up.styles.scss';
 
-import { useState } from "react";
+import { useState } from 'react';
 
 import {
     createAuthUserWithEmailAndPassword,
     createUserDocumentFromAuth,
-} from "../../utils/firebase/firebase-utils";
-import { InputComponent } from "../input/input.component";
-import { ButtonComponent } from "../button/button.component";
+} from '../../utils/firebase/firebase-utils';
+import { InputComponent } from '../input/input.component';
+import { ButtonComponent } from '../button/button.component';
 
 export const SignUpComponent = () => {
 
