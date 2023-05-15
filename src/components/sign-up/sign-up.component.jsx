@@ -37,8 +37,7 @@ export const SignUpComponent = () => {
         }
         try{
             const { user } = await createAuthUserWithEmailAndPassword(email, password);
-            const { res } = await createUserDocumentFromAuth(user);
-            console.log({res});
+            await createUserDocumentFromAuth(user);
         } catch(e) {
             if(e.code === 'auth/weak-password') {
                 alert('Password should be at least 6 characters');

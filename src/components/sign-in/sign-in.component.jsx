@@ -2,7 +2,11 @@ import './sign-in.styles.scss';
 
 import { useState } from 'react';
 
-import { signInAuthUserWithEmailAndPassword, signInWithGoogle } from '../../utils/firebase/firebase-utils';
+import {
+    createUserDocumentFromAuth,
+    signInAuthUserWithEmailAndPassword,
+    signInWithGoogle
+} from '../../utils/firebase/firebase-utils';
 
 import { InputComponent } from '../input/input.component';
 import { ButtonComponent } from '../button/button.component';
@@ -27,12 +31,19 @@ export const SignInComponent = () => {
 
     const onSubmit = async (event) => {
         event.preventDefault();
-
         try{
-            const user = await signInAuthUserWithEmailAndPassword(email, password)
-            console.log({user});
+            await signInAuthUserWithEmailAndPassword(email, password);
         } catch(e) {
             console.log({e});
+        }
+    }
+
+    const onSignInWithGoogle = async () => {
+        try{
+            const resSignInWithGoogle = await signInWithGoogle();
+            await createUserDocumentFromAuth(resSignInWithGoogle.user)
+        } catch (e) {
+            console.log(e)
         }
     }
 
@@ -60,7 +71,7 @@ export const SignInComponent = () => {
                 />
                 <div className='buttons-container'>
                     <ButtonComponent type='submit'>Sign In</ButtonComponent>
-                    <ButtonComponent type='button' buttonType='google' onClick={signInWithGoogle}>
+                    <ButtonComponent type='button' buttonType='google' onClick={onSignInWithGoogle}>
                         Google sign in
                     </ButtonComponent>
                 </div>

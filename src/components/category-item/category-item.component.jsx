@@ -5,7 +5,7 @@ export const CategoryItemComponent = ( { category: { imageUrl, title } }) => {
     return (
         <div className='category-container'>
             <div className='background-image'
-                 style= {
+                 style = {
                      {
                          backgroundImage: `url(${imageUrl})`
                      }

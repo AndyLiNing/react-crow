@@ -11,7 +11,7 @@ export const ButtonComponent = ({children, buttonType, ...otherProps}) => {
         <button className={`button-container ${btnType}`}
                 {...otherProps}
         >
-        {children}
+        { children }
         </button>
     );
 }
